@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compare Algorithms</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>OS Scheduler</h2>
+    <a href="../index.html">Home</a>
+    <a href="single.html">Single Run</a>
+    <a href="compare.html" class="active">Compare All</a>
+    <a href="about.html">About</a>
+  </aside>
+
+  <main class="main">
+    <h1>All Algorithm Comparison</h1>
+
+    <section class="panel">
+      <div class="grid">
+        <label>Time Quantum <input id="quantum" type="number" value="2" /></label>
+        <label>Context Switch <input id="contextSwitch" type="number" value="1" /></label>
+        <label>CPU Cores <input id="cores" type="number" value="1" /></label>
+        <label>Aging Threshold <input id="agingThreshold" type="number" value="8" /></label>
+      </div>
+
+      <h2>Processes</h2>
+      <table id="processTable">
+        <thead>
+          <tr><th>PID</th><th>Arrival</th><th>Burst</th><th>Priority</th><th>I/O Start</th><th>I/O Duration</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button type="button" onclick="addRow()">Add Process</button>
+      <button type="button" onclick="loadSample()">Load Sample</button>
+      <button type="button" onclick="runCompare()">Compare All</button>
+      <button type="button" onclick="window.print()">Export PDF</button>
+    </section>
+
+    <section class="metrics" id="bestBox"></section>
+
+    <section class="panel">
+      <h2>Average Waiting Time Comparison</h2>
+      <canvas id="waitingChart"></canvas>
+    </section>
+
+    <section class="panel">
+      <h2>CPU Utilization Comparison</h2>
+      <canvas id="utilChart"></canvas>
+    </section>
+
+    <section class="panel">
+      <h2>Comparison Table</h2>
+      <table id="compareTable">
+        <thead>
+          <tr><th>Algorithm</th><th>Avg Waiting</th><th>Avg Turnaround</th><th>Avg Response</th><th>CPU Utilization</th><th>Throughput</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

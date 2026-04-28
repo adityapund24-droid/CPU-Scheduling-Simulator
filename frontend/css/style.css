@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 230px;
+  height: 100vh;
+  background: #111827;
+  color: white;
+  padding: 24px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: #cbd5e1;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background: #0a56f9;
+  color: white;
+}
+
+.main {
+  margin-left: 230px;
+  padding: 32px;
+}
+
+.hero {
+  padding: 40px;
+  background: linear-gradient(135deg, #6191d0, #c9eb6c);
+  color: white;
+  border-radius: 24px;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.card,
+.panel {
+  background: white;
+  color: #1f2937;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.hero .card {
+  background: rgba(255,255,255,0.95);
+}
+
+.btn,
+button {
+  border: 0;
+  background: #5ce16e;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 6px;
+  font-weight: 600;
+}
+
+button:hover,
+.btn:hover {
+  background: #0255fc;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 9px;
+  margin-top: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+}
+
+th,
+td {
+  padding: 11px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+th {
+  background: #eef2ff;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.metric-card {
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.metric-card h3 {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.metric-card p {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 8px 0 0;
+}
+
+.gantt {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  min-height: 90px;
+  padding: 16px;
+  border: 1px dashed #94a3b8;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.gantt-seg {
+  min-width: 70px;
+  padding: 12px;
+  margin-right: 4px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  text-align: center;
+  animation: pop 0.35s ease;
+}
+
+.gantt-seg.idle {
+  background: #64748b;
+}
+
+.gantt-seg.context {
+  background: #f97316;
+}
+
+.snapshot {
+  padding: 12px;
+  background: #f8fafc;
+  border-left: 5px solid #2563eb;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media print {
+  .sidebar, button, .btn {
+    display: none;
+  }
+  .main {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  .main {
+    margin-left: 0;
+  }
+  .cards, .grid, .metrics {
+    grid-template-columns: 1fr;
+  }
+}
