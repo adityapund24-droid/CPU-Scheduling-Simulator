@@ -1,4 +1,4 @@
-# Advanced OS CPU Scheduling Simulator
+# CPU Scheduling Simulator
 
 A full advanced OS project with:
 
@@ -37,42 +37,6 @@ advanced_os_scheduler/
 │   └── js/
 └── README.md
 ```
-
----
-
-## How to Run on Windows
-
-### 1. Compile C backend
-
-Open terminal in project folder:
-
-```bash
-cd backend
-gcc scheduler.c -o scheduler.exe
-```
-
-### 2. Install Flask
-
-```bash
-cd ../server
-pip install -r requirements.txt
-```
-
-### 3. Run server
-
-```bash
-python app.py
-```
-
-### 4. Open frontend
-
-Open this in browser:
-
-```txt
-frontend/index.html
-```
-
-Or use VS Code Live Server.
 
 ---
 
