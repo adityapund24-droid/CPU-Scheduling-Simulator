@@ -12,8 +12,6 @@ typedef struct {
     int arrival;
     int burst;
     int priority;
-    int ioStart;
-    int ioDuration;
     int remaining;
     int completion;
     int waiting;
@@ -125,8 +123,6 @@ void load_input(const char *filename) {
         p[n].arrival = extract_int(obj, "arrival", 0);
         p[n].burst = extract_int(obj, "burst", 1);
         p[n].priority = extract_int(obj, "priority", 1);
-        p[n].ioStart = extract_int(obj, "ioStart", -1);
-        p[n].ioDuration = extract_int(obj, "ioDuration", 0);
 
         p[n].remaining = p[n].burst;
         p[n].completion = 0;
@@ -254,7 +250,7 @@ void add_snapshot(int t, int running[], int coreCount) {
             strcat(snaps[snapCount].running, " ");
         }
     }
-    strcpy(snaps[snapCount].waiting, "I/O simulation supported in UI model");
+    snaps[snapCount].waiting[0] = 0;
     snapCount++;
 }
 

@@ -12,8 +12,6 @@ function addRow(p = {}) {
     <td><input type="number" value="${p.arrival ?? 0}"></td>
     <td><input type="number" value="${p.burst ?? 5}"></td>
     <td><input type="number" value="${p.priority ?? 1}"></td>
-    <td><input type="number" value="${p.ioStart ?? -1}"></td>
-    <td><input type="number" value="${p.ioDuration ?? 0}"></td>
     <td><button type="button" onclick="this.closest('tr').remove()">Delete</button></td>
   `;
   tbody.appendChild(tr);
@@ -23,10 +21,10 @@ function loadSample() {
   const tbody = document.querySelector("#processTable tbody");
   tbody.innerHTML = "";
   [
-    { pid: "P1", arrival: 0, burst: 8, priority: 2, ioStart: -1, ioDuration: 0 },
-    { pid: "P2", arrival: 1, burst: 4, priority: 1, ioStart: -1, ioDuration: 0 },
-    { pid: "P3", arrival: 2, burst: 9, priority: 3, ioStart: -1, ioDuration: 0 },
-    { pid: "P4", arrival: 3, burst: 5, priority: 2, ioStart: -1, ioDuration: 0 }
+    { pid: "P1", arrival: 0, burst: 8, priority: 2 },
+    { pid: "P2", arrival: 1, burst: 4, priority: 1 },
+    { pid: "P3", arrival: 2, burst: 9, priority: 3 },
+    { pid: "P4", arrival: 3, burst: 5, priority: 2 }
   ].forEach(addRow);
 }
 
@@ -39,9 +37,7 @@ function getPayload() {
       pid: cells[0].value,
       arrival: Number(cells[1].value),
       burst: Number(cells[2].value),
-      priority: Number(cells[3].value),
-      ioStart: Number(cells[4].value),
-      ioDuration: Number(cells[5].value)
+      priority: Number(cells[3].value)
     };
   });
 

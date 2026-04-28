@@ -49,13 +49,9 @@ Each process has:
   "pid": "P1",
   "arrival": 0,
   "burst": 5,
-  "priority": 2,
-  "ioStart": -1,
-  "ioDuration": 0
+  "priority": 2
 }
 ```
-
-- `ioStart = -1` means no I/O burst
 - smaller priority number means higher priority
 
 ---
